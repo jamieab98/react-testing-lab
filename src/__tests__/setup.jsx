@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 global.fetch = fetch
 
-global.baseTransaction = [
+global.baseTransactions = [
     {
       "id": "1",
       "date": "2019-12-01",
