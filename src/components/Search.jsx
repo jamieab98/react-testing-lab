@@ -6,7 +6,10 @@ function Search({setSearch}) {
       <input
         type="text"
         placeholder="Search your Recent Transactions"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          const currentSearch = (e.target.value)
+          setSearch(currentSearch)
+        }}
       />
       <i className="circular search link icon"></i>
     </div>
