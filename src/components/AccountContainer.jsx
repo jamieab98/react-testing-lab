@@ -51,7 +51,7 @@ function AccountContainer() {
       <Search setSearch={setSearch}/>
       <AddTransactionForm postTransaction={postTransaction}/>
       <Sort onSort={onSort} setSorting={setSorting}/>
-      <TransactionsList filteredTransactions={filteredTransactions} />
+      <TransactionsList transactions={filteredTransactions} />
       <button onClick={checkFilter}>Filter Check</button>
     </div>
   );

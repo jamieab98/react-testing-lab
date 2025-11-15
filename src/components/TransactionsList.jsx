@@ -1,8 +1,8 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({filteredTransactions}) {
-  const transactionComponent = filteredTransactions.map((transaction)=>{
+function TransactionsList({transactions}) {
+  const transactionComponent = transactions.map((transaction)=>{
     return <Transaction key={transaction.id} transaction={transaction}/>
   })
   return (
