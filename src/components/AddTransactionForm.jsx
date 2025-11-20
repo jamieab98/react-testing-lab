@@ -3,14 +3,14 @@ import React from "react";
 function AddTransactionForm({postTransaction}) {
   function submitForm(e){
     e.preventDefault()
+    const form = e.currentTarget;
     const newTransaction = {
-      date: e.target.date.value,
-      description: e.target.description.value,
-      category: e.target.category.value,
-      amount: e.target.amount.value
+      date: form.elements.namedItem('date')?.value || '',
+      description: form.elements.namedItem('description')?.value || '',
+      category: form.elements.namedItem('category')?.value || '',
+      amount: form.elements.namedItem('amount')?.value || '',
     }
     postTransaction(newTransaction)
-
   }
 
   return (
@@ -22,7 +22,7 @@ function AddTransactionForm({postTransaction}) {
           <input type="text" name="category" placeholder="Category" />
           <input type="number" name="amount" placeholder="Amount" step="0.01" />
         </div>
-        <button className="ui button" type="submit">
+        <button className="ui button" type="submit" data-testid="submitbutton">
           Add Transaction
         </button>
       </form>

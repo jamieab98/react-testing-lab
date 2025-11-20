@@ -41,10 +41,6 @@ function AccountContainer() {
     filteredTransactions = transactions.filter((t) => t.category.toLowerCase().includes(search.toLowerCase()))
   }
 
-  function checkFilter() {
-    console.log(filteredTransactions)
-  }
-
 
   return (
     <div>
@@ -52,7 +48,6 @@ function AccountContainer() {
       <AddTransactionForm postTransaction={postTransaction}/>
       <Sort onSort={onSort} setSorting={setSorting}/>
       <TransactionsList transactions={filteredTransactions} />
-      <button onClick={checkFilter}>Filter Check</button>
     </div>
   );
 }
