@@ -27,9 +27,6 @@ test('When the filter changes, the list of transactions changes', () => {
 );
 
     render(<AccountContainer/>)
-    //fireEvent.change(screen.getByRole("combobox"), {
-    //    target: {value: "category"}
-    //});
     waitFor(() => 
     expect(screen.getByText((content) => content.includes("Paycheck from Bob's Burgers")).toBeInTheDocument())
 )
