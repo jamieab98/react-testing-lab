@@ -1,9 +1,16 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { expect, test } from "vitest";
+import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import AddTransactionForm from "../../components/AddTransactionForm";
 import userEvent from "@testing-library/user-event";
 
-test('New transactions are added to the frontend', async () => {
+beforeEach(() => {
+    global.fetch = vi.fn();
+})
+afterEach(() => {
+    vi.restoreAllMocks();
+})
+
+test('New transactions are added to the frontend and fetch was called', async () => {
     const mockPostTransaction = vi.fn();
     render(<AddTransactionForm postTransaction={mockPostTransaction}/>);
     const dateinput = screen.getByTestId('dateinput');
